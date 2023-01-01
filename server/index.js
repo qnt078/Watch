@@ -41,5 +41,5 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(3000, console.log(`listening on port ${PORT}`));
+app.listen(3000, console.log(`listenings on port ${PORT}`));
 
