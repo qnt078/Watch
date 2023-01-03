@@ -1,5 +1,4 @@
 import express from "express";
-
 import dotenv from "dotenv";
 import connectDatabase from "./config/MongoDB.js";
 import ImportData from "./DataImport.js";
@@ -13,8 +12,9 @@ dotenv.config();
 connectDatabase();
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors());
+
 
 //API
 app.use("/api/import", ImportData);
