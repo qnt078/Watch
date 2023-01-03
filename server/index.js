@@ -30,14 +30,7 @@ app.get("/api/config/paypal", (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-// // Load Product from server
-// app.get("/api/products", (req, res) => {
-//     res.json(productData.getProducts(8));
-// });
-// // Load All Product from server
-// app.get("/api/catalog", (req, res) => {
-//     res.json(productData.getAllProducts());
-// });
+
 
 const PORT = process.env.PORT || 5000;
 
