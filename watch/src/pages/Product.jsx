@@ -1,45 +1,60 @@
-import React from "react";
-import productData from "../assets/fake-data/products";
-import productData_Male from "../assets/fake-data/products-male";
-import productData_female from "../assets/fake-data/products-female";
+import React,{ useEffect, useState} from "react";
+import axios from "axios";
 import Helmet from "../components/Helmet";
 import Section, { SectionBody, SectionTitle } from "../components/Section";
 import Grid from "../components/Grid";
 import ProductCard from "../components/ProductCard";
 import ProductView from "../components/ProductView";
+import { UR } from "../Redux/Url";
 const Product = (props) => {
-  const product = productData.getProductBySlug(props.match.params.slug) || productData_Male.getProductBySlug(props.match.params.slug) || productData_female.getProductBySlug(props.match.params.slug)
+  const [products, setProducts] = useState([]);
 
-  const relatedProducts = productData.getProducts(4) || productData_Male.getProducts || productData_female.getProducts 
+  useEffect(() => {
+    const fetchproducts = async () => {
+      const { data } = await axios.get(`${UR}/api/products`);
+      setProducts(data);
+    };
+    fetchproducts();
+  }, []);
+  const productList = products;
+
+  const getProducts = (count) => {
+    const max = productList.length - count;
+    const min = 0;
+    const start = Math.floor(Math.random() * (max - min) + min);
+    return productList.slice(start, start + count);
+  };
+ 
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [product]);
+  }, [products]);
  
 
   return (
     <Helmet title={props.match.params.id}>
       <Section>
         <SectionBody>
-          <ProductView product={product} />
+          <ProductView product={products} />
         </SectionBody>
       </Section>
 
       <Section>
         <SectionTitle>khác</SectionTitle>
         <SectionBody>
-          <Grid col={4} mdCol={2} smCol={1} gap={20}>
-            {relatedProducts.map((item, index) => (
+          <Grid col={4} mdCol={5} smCol={1} gap={20}>
+            {getProducts(4).map((item, index) => (
               <ProductCard
                 key={index}
+                id={item._id}
                 img01={item.image01}
                 img02={item.image02}
                 name={item.title}
                 price={Number(item.price)}
                 slug={item.slug}
-                rate= {item.rating}
+                rate={item.rating}
                 review={item.numReviews}
-              />
+              ></ProductCard>
             ))}
           </Grid>
         </SectionBody>

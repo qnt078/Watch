@@ -8,7 +8,7 @@ import Helmet from "../components/Helmet";
 
 
 
-
+import { UR } from "../Redux/Url";
 
 
 
@@ -24,7 +24,7 @@ const Search = () => {
 
   useEffect(() => {
    const fetchproducts = async () => {
-      const { data } = await axios.get("/api/products");
+      const { data } = await axios.get(`${UR}/api/products`);
       setProducts(data);
      
 

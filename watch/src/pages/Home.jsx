@@ -25,13 +25,13 @@ import ShopSection from "./ShopSection";
 import CardImage from "../components/CardImage";
 import Picture from "../components/Picture";
 import Customer from "../components/Customer";
-
+import { UR } from "../Redux/Url";
 const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchproducts = async () => {
-      const { data } = await axios.get("/api/products");
+      const { data } = await axios.get(`${UR}/api/products`);
       setProducts(data);
     };
     fetchproducts();

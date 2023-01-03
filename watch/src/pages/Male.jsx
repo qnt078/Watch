@@ -8,7 +8,7 @@ import colors from "../assets/fake-data/product-color";
 import type from "../assets/fake-data/product-type";
 // import Button from "../components/Button";
 import InfinityList from "../components/InfinityList";
-
+import { UR } from "../Redux/Url";
 const Male = () => {
   const initFilter = {
     category: [],
@@ -27,7 +27,7 @@ const Male = () => {
 
   useEffect(() => {
     const fetchproducts = async () => {
-      const { data } = await axios.get("/api/products/male");
+      const { data } = await axios.get(`${UR}/api/products/male`);
       setProductData(data);
     };
     fetchproducts();

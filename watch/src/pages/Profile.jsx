@@ -9,7 +9,7 @@ import moment from "moment";
 import { listMyOrders } from "../Redux/Actions/OrderActions";
 import Helmet from "../components/Helmet";
 import logo from "../assets/images/Logo-2.png";
-
+import { UR } from "../Redux/Url";
 
 const ProfileScreen = () => {
   window.scrollTo(0, 0);

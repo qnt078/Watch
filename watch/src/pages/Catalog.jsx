@@ -8,7 +8,7 @@ import colors from "../assets/fake-data/product-color";
 import type from "../assets/fake-data/product-type";
 // import Button from "../components/Button";
 import InfinityList from "../components/InfinityList";
-
+import { UR } from "../Redux/Url";
 const Catalog = () => {
   const initFilter = {
     category: [],
@@ -29,7 +29,7 @@ const Catalog = () => {
 
   useEffect(() => {
     const fetchproducts = async () => {
-      const { data } = await axios.get("/api/products/smart");
+      const { data } = await axios.get(`${UR}/api/products/smart`);
       setProductData(data);
     };
     fetchproducts();
