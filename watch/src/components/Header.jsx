@@ -319,11 +319,11 @@ const Head = () => {
               </Offcanvas.Header>
               <Offcanvas.Body >
                 <Nav className="justify-content-center flex-grow-1" >
-                <Nav.Link href="/" className="text-black  nav-links ">Trang chủ</Nav.Link>
-                  <Nav.Link href="/catalog" className="text-black nav-links ">Đồng hồ thông minh</Nav.Link>
-                  <Nav.Link href="/male" className="text-black nav-links ">Đồng hồ nam</Nav.Link>
-                  <Nav.Link href="/female" className="text-black nav-links ">Đồng hồ nữ</Nav.Link>
-                  <Nav.Link href="/news" className="text-black nav-links ">Tin tức</Nav.Link>
+                <Nav.Link href="/" className="text-white  nav-links ">Trang chủ</Nav.Link>
+                  <Nav.Link href="/catalog" className="text-white nav-links ">Đồng hồ thông minh</Nav.Link>
+                  <Nav.Link href="/male" className="text-white nav-links ">Đồng hồ nam</Nav.Link>
+                  <Nav.Link href="/female" className="text-white nav-links ">Đồng hồ nữ</Nav.Link>
+                  <Nav.Link href="/news" className="text-white nav-links ">Tin tức</Nav.Link>
                   
                 </Nav>
                
