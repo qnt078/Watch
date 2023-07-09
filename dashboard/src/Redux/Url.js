@@ -1,1 +1,2 @@
-export const URL = process.env.REACT_APP_SERVER_URL;
+const REACT_APP_SERVER_URL = 'https://watch-api-f4f6.onrender.com'
+export const URL = REACT_APP_SERVER_URL;

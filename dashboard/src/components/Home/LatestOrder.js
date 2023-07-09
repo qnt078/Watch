@@ -6,6 +6,7 @@ import Loading from "../LoadingError/Loading";
 
 const LatestOrder = (props) => {
   const { loading, error, orders } = props;
+  console.log(orders);
   return (
     <div className="card-body">
       <h4 className="card-title">Đơn đặt hàng mới</h4>
@@ -19,10 +20,10 @@ const LatestOrder = (props) => {
             <tbody>
               {orders.slice(0, 5).map((order) => (
                 <tr key={order._id}>
-                  <td>
+                  {/* <td>
                     <b>{order.user.name}</b>
                   </td>
-                  <td>{order.user.email}</td>
+                  <td>{order.user.email}</td> */}
                   <td>{order.totalPrice} &#8363;</td>
                   <td>
                     {order.isPaid ? (
