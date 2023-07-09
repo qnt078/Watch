@@ -87,7 +87,7 @@ const ProductView = ({ history, match }) => {
                 </div> */}
                 <div
                   style={{
-                    height: "50vh",
+                    height: "70vh",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

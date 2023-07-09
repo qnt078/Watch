@@ -294,31 +294,36 @@ const Head = () => {
 </nav>
         </div>
       </div> */}
-      {[ 'sm'].map((expand) => (
+      {['sm'].map((expand) => (
         <Navbar key={expand} bg="black" expand={expand} className="mb-3 " >
           <Container fluid>
      
      
             
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className="btn btn-light"/>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} 
+
+
+            >
+             <i class='bx bx-menu menu-icon'> </i>
+            </Navbar.Toggle>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              className = "bg-dark"
+              className = "nav-menu"
              
               
             >
-              <Offcanvas.Header closeButton>
+              <Offcanvas.Header closeButton  className="menu-close">
                
               </Offcanvas.Header>
-              <Offcanvas.Body>
+              <Offcanvas.Body >
                 <Nav className="justify-content-center flex-grow-1" >
-                <Nav.Link href="/" className="text-white  nav-links ">Trang chủ</Nav.Link>
-                  <Nav.Link href="/catalog" className="text-white nav-links ">Đồng hồ thông minh</Nav.Link>
-                  <Nav.Link href="/male" className="text-white nav-links ">Đồng hồ nam</Nav.Link>
-                  <Nav.Link href="/female" className="text-white nav-links ">Đồng hồ nữ</Nav.Link>
-                  <Nav.Link href="/news" className="text-white nav-links ">Tin tức</Nav.Link>
+                <Nav.Link href="/" className="text-black  nav-links ">Trang chủ</Nav.Link>
+                  <Nav.Link href="/catalog" className="text-black nav-links ">Đồng hồ thông minh</Nav.Link>
+                  <Nav.Link href="/male" className="text-black nav-links ">Đồng hồ nam</Nav.Link>
+                  <Nav.Link href="/female" className="text-black nav-links ">Đồng hồ nữ</Nav.Link>
+                  <Nav.Link href="/news" className="text-black nav-links ">Tin tức</Nav.Link>
                   
                 </Nav>
                
@@ -327,6 +332,7 @@ const Head = () => {
           </Container>
         </Navbar>
       ))}
+      
     </div>
   );
 };
