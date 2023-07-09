@@ -20,10 +20,10 @@ const LatestOrder = (props) => {
             <tbody>
               {orders.slice(0, 5).map((order) => (
                 <tr key={order._id}>
-                  {/* <td>
+                  <td>
                     <b>{order.user.name}</b>
                   </td>
-                  <td>{order.user.email}</td> */}
+                  <td>{order.user.email}</td>
                   <td>{order.totalPrice} &#8363;</td>
                   <td>
                     {order.isPaid ? (
